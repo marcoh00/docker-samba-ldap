@@ -1,0 +1,5 @@
+/var/lib/samba/private/secrets.tdb false root:root 0600 0700
+/etc/samba/smb.conf false root:root 0644 0755
+/etc/smbldap-tools true root:root 0600 0700
+/etc/nslcd.conf false root:root 0640 0750
+/etc/nsswitch.conf false root:root 0644 0755

@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+exec logutil-service /log/nslcd

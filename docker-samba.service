@@ -1,0 +1,13 @@
+[Unit]
+Description=samba container
+Requires=docker.service openldap.service
+After=docker.service openldap.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run --name samba -p 139:139 -p 445:445 -v "{{ smbconfpath }}:/etc/samba/smb.conf" -v "{{ secretstdbpath }}:/var/lib/samba/private/secrets.tdb" -v "{{ smbldaptoolspath }}:/etc/smbldap-tools" -v "{{ nslcdconfpath }}:/etc/nslcd.conf" -h "{{ workgroup }}" marcoh00/samba
+ExecStop=/usr/bin/docker stop -t 5 samba
+ExecStopPost=/usr/bin/docker rm -f samba
+
+[Install]
+WantedBy=default.target
