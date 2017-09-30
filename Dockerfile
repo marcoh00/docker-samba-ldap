@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-ENV SAMBA_VERSION="2:4.5.8+dfsg-2+deb9u1+b1"
+ENV SAMBA_VERSION="2:4.5.8+dfsg-2+deb9u2"
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y samba=$SAMBA_VERSION smbldap-tools ldap-utils && \
