@@ -23,4 +23,4 @@ VOLUME ["/etc/samba/smb.conf", "/var/lib/samba/private/secrets.tdb", "/etc/smbld
 EXPOSE 139 445
 ENTRYPOINT ["/init"]
 
-CMD ["/usr/sbin/smbd", "-F", "-S", "-D", "<", "/dev/null"]
+CMD ["/usr/sbin/smbd", "-F", "-S", "-D"]
